@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D3D3D3"
     tools:context=".ui.Status" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:background="@color/white"
         android:orientation="horizontal">
         
         <RelativeLayout
@@ -46,28 +48,19 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/usernamechat"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Sanmati Dash"
+                    android:layout_weight="1"
+                    android:text="My status"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/lastmessageDateTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#9C9898"
-                    android:text="08/04/2023" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/chatlastmessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tap to add status"
+                android:text="Tap to add status update"
                 android:textColor="#9C9898"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -78,9 +71,14 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="2dp"
+        android:text="New status" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="6dp"/>
 </LinearLayout>
