@@ -1,4 +1,4 @@
-package com.app.whatsappreal;
+package com.app.whatsappreal.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.app.whatsappreal.Adapters.ViewPagerAdapter;
+import com.app.whatsappreal.R;
 import com.app.whatsappreal.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         binding.fabBtn.hide();
         new Handler().postDelayed(() -> {
             switch (position) {
-                case 0: binding.fabBtn.setImageDrawable(AppCompatResources.getDrawable(getApplicationContext(),R.drawable.chat_24px)); break;
+                case 0: binding.fabBtn.setImageDrawable(AppCompatResources.getDrawable(getApplicationContext(), R.drawable.chat_24px)); break;
                 case 1: binding.fabBtn.setImageDrawable(AppCompatResources.getDrawable(getApplicationContext(),R.drawable.photo_camera_24px)); break;
                 case 2: binding.fabBtn.setImageDrawable(AppCompatResources.getDrawable(getApplicationContext(),R.drawable.add_call_24px)); break;
             }

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
+                android:id="@+id/profile_image_status"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/placeholder_profile" />
@@ -29,8 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:layout_alignBottom="@+id/profile_image"
-                android:layout_alignEnd="@id/profile_image"
+                android:layout_alignBottom="@+id/profile_image_status"
+                android:layout_alignEnd="@id/profile_image_status"
                 android:src="@drawable/add_circle_24px" />
         </RelativeLayout>
 
