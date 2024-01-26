@@ -1,5 +1,6 @@
 package com.app.whatsappreal.Activity;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -11,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -68,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+            }
+        });
     }
 
     private void changeFabIcon(final int position) {
@@ -93,8 +101,16 @@ public class MainActivity extends AppCompatActivity {
         int id=item.getItemId();
         if (id==R.id.menu_search){
             Toast.makeText(this, "search clicked", Toast.LENGTH_SHORT).show();
-        } else if (id==R.id.menu_more) {
+        } else if (id==R.id.menu_new_group) {
             Toast.makeText(this, "more clicked", Toast.LENGTH_SHORT).show();
+        } else if (id==R.id.menu_new_broadcast) {
+            
+        } else if (id==R.id.menu_web) {
+            
+        } else if (id==R.id.menu_starred_msg) {
+            
+        } else if (id==R.id.menu_settings) {
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
