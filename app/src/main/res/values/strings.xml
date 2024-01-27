@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WhatsApp Real</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="usernamedesc">This is not your username or pin. This name will be visible to your WhatsApp contacts.</string>
 </resources>
