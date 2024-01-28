@@ -43,7 +43,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
         binding.startAuthButton.setOnClickListener(v -> {
             if (binding.userphone.getText().toString().isEmpty()) {
                 new AlertDialog.Builder(PhoneLoginActivity.this)
-                        .setMessage("Please enter your phone number")
+                        .setMessage("Please enter your phone number.")
                         .setPositiveButton("OK", (dialog, which) -> dialog.dismiss()).setCancelable(false).show();
             } else {
                 if (binding.startAuthButton.getText().toString().equals("Next")) {

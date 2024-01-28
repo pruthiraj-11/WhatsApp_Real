@@ -131,9 +131,6 @@ public class ProfileActivity extends AppCompatActivity {
     private void showBottomSheetDialog() {
         bottomSheetDialog=new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.media_pick_bottom_sheet_dialog);
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
-            Objects.requireNonNull(bottomSheetDialog.getWindow()).addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
         bottomSheetDialog.findViewById(R.id.camera_pick).setOnClickListener(view13 -> {
             bottomSheetDialog.dismiss();
             Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
