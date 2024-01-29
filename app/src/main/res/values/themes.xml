@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.WhatsAppReal" parent="Base.Theme.WhatsAppReal" />
+
+    <style name="EmojiPickerViewStyle" >
+        <item name="colorControlNormal">#665558</item>
+        <item name="colorAccent">#0277BD</item>
+    </style>
 </resources>

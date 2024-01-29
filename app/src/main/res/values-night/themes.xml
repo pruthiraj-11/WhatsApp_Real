@@ -4,4 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="EmojiPickerViewStyle" >
+        <item name="colorControlNormal">#665558</item>
+        <item name="colorAccent">#0277BD</item>
+    </style>
 </resources>

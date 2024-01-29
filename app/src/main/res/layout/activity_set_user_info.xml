@@ -7,6 +7,7 @@
     tools:context=".Activity.SetUserInfoActivity">
 
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -42,16 +43,42 @@
             app:civ_border_color="#000000"
             app:civ_border_width="1dp" />
 
-        <EditText
-            android:id="@+id/userNameInfo"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:ems="10"
-            android:inputType="text|textPersonName"
-            android:hint="Type your name here" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/userNameInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Type your name here"
+                android:inputType="text|textPersonName" />
+
+            <ImageButton
+                android:id="@+id/emojiPickerbtn"
+                android:background="@android:color/transparent"
+                android:layout_width="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_height="32dp"
+                android:src="@drawable/mood_24px"
+                app:tint="#50CF55" />
+        </LinearLayout>
+
     </LinearLayout>
+
+<!--    <com.vanniktech.emoji.EmojiEditText-->
+<!--        android:id="@+id/emojiEditText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:imeOptions="actionSend"-->
+<!--        android:inputType="textCapSentences|textMultiLine"-->
+<!--        android:maxLines="3"/>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next_btn"

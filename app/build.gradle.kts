@@ -48,6 +48,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.vanniktech:emoji-ios:0.18.0")
+    implementation("com.vanniktech:emoji-google:0.18.0")
     implementation("com.hbb20:ccp:2.7.3")
     implementation("com.karumi:dexter:6.2.3")
     implementation("com.google.firebase:firebase-firestore:24.10.1")

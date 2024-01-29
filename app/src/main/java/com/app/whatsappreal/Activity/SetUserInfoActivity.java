@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -102,12 +103,15 @@ public class SetUserInfoActivity extends AppCompatActivity {
                 firestore.collection("Users").document(firebaseUser.getUid()).set(usersModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-
+                        startActivity(new Intent(SetUserInfoActivity.this, MainActivity.class));
+                        finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //todo
+                        new AlertDialog.Builder(SetUserInfoActivity.this)
+                                .setMessage("Try again")
+                                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss()).setCancelable(false).show();
                     }
                 });
             }
