@@ -13,6 +13,7 @@ import android.view.View;
 import com.app.whatsappreal.Activity.SettingsActivities.ProfileActivity;
 import com.app.whatsappreal.R;
 import com.app.whatsappreal.databinding.ActivitySettingsBinding;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,7 +61,15 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 String username= Objects.requireNonNull(documentSnapshot.get("userName")).toString();
+                String imageProfile= Objects.requireNonNull(documentSnapshot.get("imageProfile")).toString();
+                String about= Objects.requireNonNull(documentSnapshot.get("bio")).toString();
                 binding.usernameSettings.setText(username);
+                if (about.isEmpty()) {
+                    binding.usernameAboutSettings.setText(getResources().getString(R.string.default_user_about));
+                } else {
+                    binding.usernameAboutSettings.setText(about);
+                }
+                Glide.with(getApplicationContext()).load(imageProfile).placeholder(R.drawable.placeholder_profile).into(binding.userProfileSettings);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

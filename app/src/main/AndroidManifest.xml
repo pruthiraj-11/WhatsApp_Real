@@ -41,6 +41,12 @@
         android:theme="@style/Theme.WhatsAppReal"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.ContactsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ViewProfilePicActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.SettingsActivities.ProfileActivity"
             android:exported="false" />
         <activity
