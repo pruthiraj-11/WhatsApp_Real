@@ -1,4 +1,4 @@
-package com.app.whatsappreal.Activity;
+package com.app.whatsappreal.ui.Activity;
 
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;

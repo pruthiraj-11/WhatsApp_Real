@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#D3D3D3"
-    tools:context=".ui.Status" >
+    tools:context=".ui.fragments.Status" >
 
     <LinearLayout
         android:layout_width="match_parent"

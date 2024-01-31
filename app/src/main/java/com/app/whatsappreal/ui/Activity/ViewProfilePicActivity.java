@@ -1,4 +1,4 @@
-package com.app.whatsappreal.Activity;
+package com.app.whatsappreal.ui.Activity;
 
 import android.os.Bundle;
 

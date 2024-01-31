@@ -1,4 +1,4 @@
-package com.app.whatsappreal.Activity;
+package com.app.whatsappreal.ui.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.app.whatsappreal.ui.Calls;
-import com.app.whatsappreal.ui.Chat;
-import com.app.whatsappreal.ui.Status;
+import com.app.whatsappreal.ui.fragments.Calls;
+import com.app.whatsappreal.ui.fragments.Chat;
+import com.app.whatsappreal.ui.fragments.Status;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
     public ViewPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {

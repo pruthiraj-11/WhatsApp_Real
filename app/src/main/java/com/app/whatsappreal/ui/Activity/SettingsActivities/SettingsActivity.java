@@ -1,4 +1,4 @@
-package com.app.whatsappreal.Activity;
+package com.app.whatsappreal.ui.Activity.SettingsActivities;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -10,14 +10,11 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.app.whatsappreal.Activity.SettingsActivities.ProfileActivity;
 import com.app.whatsappreal.R;
 import com.app.whatsappreal.databinding.ActivitySettingsBinding;
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;

@@ -1,16 +1,13 @@
-package com.app.whatsappreal.Activity.SettingsActivities;
+package com.app.whatsappreal.ui.Activity.SettingsActivities;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -27,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 
-import com.app.whatsappreal.Activity.ViewProfilePicActivity;
+import com.app.whatsappreal.ui.Activity.ViewProfilePicActivity;
 import com.app.whatsappreal.R;
 import com.app.whatsappreal.commonutil.Common;
 import com.app.whatsappreal.databinding.ActivityProfileBinding;

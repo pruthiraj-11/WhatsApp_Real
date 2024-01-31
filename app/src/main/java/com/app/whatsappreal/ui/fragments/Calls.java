@@ -1,4 +1,4 @@
-package com.app.whatsappreal.ui;
+package com.app.whatsappreal.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

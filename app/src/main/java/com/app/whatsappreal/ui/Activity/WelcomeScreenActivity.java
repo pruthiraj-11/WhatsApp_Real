@@ -1,4 +1,4 @@
-package com.app.whatsappreal.Activity;
+package com.app.whatsappreal.ui.Activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.app.whatsappreal.Activity.auth.PhoneLoginActivity;
+import com.app.whatsappreal.ui.Activity.auth.PhoneLoginActivity;
 import com.app.whatsappreal.R;
 import com.app.whatsappreal.Util.UtilClass;
 

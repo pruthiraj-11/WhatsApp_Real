@@ -1,6 +1,5 @@
-package com.app.whatsappreal.Activity.auth;
+package com.app.whatsappreal.ui.Activity.auth;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.app.whatsappreal.Activity.SetUserInfoActivity;
+import com.app.whatsappreal.ui.Activity.SetUserInfoActivity;
 import com.app.whatsappreal.databinding.ActivityPhoneLoginBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
