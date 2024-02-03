@@ -2,6 +2,7 @@ package com.app.whatsappreal.ui.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,9 +35,11 @@ public class Chat extends Fragment {
     FragmentChatBinding binding;
     private ArrayList<ChatList> lists;
     private ChatListAdapter chatListAdapter;
+    private final Handler handler=new Handler();
     private FirebaseUser firebaseUser;
     private DatabaseReference databaseReference;
     private FirebaseFirestore firebaseFirestore;
+    private ArrayList<String> allUserId;
     public Chat() {
     }
 
@@ -54,6 +57,7 @@ public class Chat extends Fragment {
         binding= FragmentChatBinding.inflate(inflater, container, false);
 
         lists=new ArrayList<>();
+        allUserId= new ArrayList<>();
         chatListAdapter=new ChatListAdapter(lists,getContext());
         binding.chatrecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.chatrecyclerview.setAdapter(chatListAdapter);
@@ -69,11 +73,13 @@ public class Chat extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 lists.clear();
+                allUserId.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
                     String userId= Objects.requireNonNull(dataSnapshot.child("chatId").getValue()).toString();
-                    getUserData(userId);
+                    allUserId.add(userId);
+                    binding.progressBar.setVisibility(View.GONE);
                 }
-                binding.chatrecyclerview.setAdapter(chatListAdapter);
+                getUserData();
             }
 
             @Override
@@ -83,22 +89,27 @@ public class Chat extends Fragment {
         });
     }
 
-    private void getUserData(String userId) {
-        firebaseFirestore.collection("Users").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                ChatList chatList=new ChatList();
-                chatList.setUserId(documentSnapshot.getString("userId"));
-                chatList.setUserName(documentSnapshot.getString("userName"));
-                chatList.setUserProfileURL(documentSnapshot.getString("userProfileURL"));
-                lists.add(chatList);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                e.printStackTrace();
+    private void getUserData() {
+        handler.post(() -> {
+            for (String userId:allUserId) {
+                firebaseFirestore.collection("Users").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        ChatList chatList=new ChatList();
+                        chatList.setUserId(documentSnapshot.getString("userId"));
+                        chatList.setUserName(documentSnapshot.getString("userName"));
+                        chatList.setUserProfileURL(documentSnapshot.getString("userProfileURL"));
+                        lists.add(chatList);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                    }
+                });
             }
         });
+        binding.chatrecyclerview.setAdapter(chatListAdapter);
     }
 
     @Override
