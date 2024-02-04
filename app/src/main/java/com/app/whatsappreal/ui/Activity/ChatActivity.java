@@ -86,6 +86,12 @@ public class ChatActivity extends AppCompatActivity {
                 initBtnClick();
             }
         });
+        binding.chatBackbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, RecyclerView.VERTICAL,true);
         linearLayoutManager.setStackFromEnd(true);
         binding.chatMessageRecyclerView.setLayoutManager(linearLayoutManager);

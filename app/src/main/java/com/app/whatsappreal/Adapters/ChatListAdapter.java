@@ -1,6 +1,7 @@
 package com.app.whatsappreal.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.whatsappreal.Models.ChatList;
 import com.app.whatsappreal.R;
+import com.app.whatsappreal.ui.Activity.ChatActivity;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -39,6 +41,15 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         holder.chatlastmessage.setText(lists.get(position).getLastMessage());
         Glide.with(context).load(lists.get(position).getUserProfileURL()).placeholder(R.drawable.placeholder_profile).into(holder.userProfilePic);
         holder.lastmessageDateTime.setText(lists.get(position).getLastMessageDate());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, ChatActivity.class)
+                        .putExtra("userId",lists.get(position).getUserId())
+                        .putExtra("userName",lists.get(position).getUserName())
+                        .putExtra("userProfile",lists.get(position).getUserProfileURL()));
+            }
+        });
     }
 
     @Override

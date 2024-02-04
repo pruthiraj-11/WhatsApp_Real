@@ -109,7 +109,6 @@ public class Chat extends Fragment {
                 });
             }
         });
-        binding.chatrecyclerview.setAdapter(chatListAdapter);
     }
 
     @Override
