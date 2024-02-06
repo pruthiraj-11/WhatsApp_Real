@@ -107,7 +107,8 @@ public class ChatActivity extends AppCompatActivity {
                     chatsMessageModelArrayList.clear();
                     for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
                         ChatsMessageModel chatsMessageModel=dataSnapshot.getValue(ChatsMessageModel.class);
-                        if (Objects.requireNonNull(chatsMessageModel).getSender().equals(firebaseUser.getUid()) && chatsMessageModel.getReceiver().equals(receivedId)) {
+                        if (Objects.requireNonNull(chatsMessageModel).getSender().equals(firebaseUser.getUid()) && chatsMessageModel.getReceiver().equals(receivedId)
+                        || Objects.requireNonNull(chatsMessageModel).getReceiver().equals(firebaseUser.getUid()) && Objects.requireNonNull(chatsMessageModel).getSender().equals(receivedId)) {
                             chatsMessageModelArrayList.add(chatsMessageModel);
                         }
                     }
