@@ -25,9 +25,15 @@
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:layout_height="wrap_content"
                 android:src="@drawable/placeholder_profile" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
