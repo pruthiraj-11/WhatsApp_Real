@@ -34,6 +34,20 @@
                 android:layout_gravity="bottom"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar6"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:title="Usernumber"
+                app:titleTextColor="@color/white"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+                app:subtitle="+91 83429 34889"
+                app:subtitleTextColor="@color/white"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:theme="?attr/actionBarTheme" />
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
