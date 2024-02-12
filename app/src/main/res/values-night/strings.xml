@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="default_user_about">Hey there! I am using WhatsApp.</string>
+    <string name="user_agreement_policy">Read our Privacy Policy. Tap Agree and Continue to accept the Terms of Service.</string>
 </resources>

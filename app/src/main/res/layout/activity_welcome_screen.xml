@@ -37,14 +37,15 @@
             android:padding="15dp"
             android:textSize="16sp"
             android:gravity="center"
-            android:text="Read our Privacy Policy. Tap Agree and Continue to accept the Terms of Service." />
+            android:text="@string/user_agreement_policy" />
 
         <androidx.cardview.widget.CardView
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@color/black"
+            app:cardBackgroundColor="#CDC5C5"
             app:cardCornerRadius="25dp"
-            app:cardElevation="5dp"
+            app:cardElevation="3dp"
+            android:outlineSpotShadowColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
@@ -52,25 +53,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:padding="8dp"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/imageButton4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/btn_star" />
+                    android:paddingEnd="4dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/language_24px"
+                    app:tint="@color/whatsapplight" />
 
                 <TextView
                     android:id="@+id/textView34"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#423C3C"
                     android:text="English" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/btn_star" />
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_drop_down_24px"
+                    app:tint="@color/whatsapplight"/>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
