@@ -3,4 +3,5 @@
     <string name="usernamedesc">This is not your username or pin. This name will be visible to your WhatsApp contacts.</string>
     <string name="default_user_about">Hey there! I am using WhatsApp.</string>
     <string name="user_agreement_policy">Read our Privacy Policy. Tap Agree and Continue to accept the Terms of Service.</string>
+    <string name="welcome_screen_links">Read our <a href="https://www.whatsapp.com/legal/privacy-policy?lg=en&amp;lc=US&amp;eea=0">Privacy Policy.</a>Tap \"Agree and continue\" to accept the <a href="https://www.whatsapp.com/legal/terms-of-service?lg=en&amp;lc=US&amp;eea=0">Terms of Service.</a></string>
 </resources>

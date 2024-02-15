@@ -37,7 +37,7 @@
             android:padding="15dp"
             android:textSize="16sp"
             android:gravity="center"
-            android:text="@string/user_agreement_policy" />
+            android:text="@string/welcome_screen_links" />
 
         <androidx.cardview.widget.CardView
             android:layout_gravity="center_horizontal"

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
