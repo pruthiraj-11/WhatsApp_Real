@@ -40,6 +40,7 @@
             android:text="@string/welcome_screen_links" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/app_locale_change"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="10dp"
             app:cardBackgroundColor="#CDC5C5"

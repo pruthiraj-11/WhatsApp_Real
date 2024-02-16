@@ -4,17 +4,19 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-import com.app.whatsappreal.ui.Activity.auth.PhoneLoginActivity;
 import com.app.whatsappreal.R;
 import com.app.whatsappreal.Util.UtilClass;
+import com.app.whatsappreal.ui.Activity.auth.PhoneLoginActivity;
 
 public class WelcomeScreenActivity extends AppCompatActivity {
 
+    private CardView appLanguageChangeCardLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +32,21 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         } else {
             UtilClass.requestPermissions(getApplicationContext(),permissionList2);
         }
+        appLanguageChangeCardLayout=findViewById(R.id.app_locale_change);
         Button button=findViewById(R.id.button);
         button.setOnClickListener(v -> {
             startActivity(new Intent(WelcomeScreenActivity.this, PhoneLoginActivity.class));
             finish();
         });
+        appLanguageChangeCardLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeAppLanguage();
+            }
+        });
+    }
+
+    private void changeAppLanguage() {
+        //todo
     }
 }
