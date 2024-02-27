@@ -92,6 +92,12 @@ public class ChatActivity extends AppCompatActivity {
                 finish();
             }
         });
+        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ChatActivity.this, ContactsProfileDetailsActivity.class));
+            }
+        });
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, RecyclerView.VERTICAL,true);
         linearLayoutManager.setStackFromEnd(true);
         binding.chatMessageRecyclerView.setLayoutManager(linearLayoutManager);
