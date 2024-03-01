@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.LocaleList;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.OptIn;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.collection.ArrayMap;
@@ -14,28 +15,26 @@ import androidx.core.os.BuildCompat;
 import androidx.core.os.ConfigurationCompat;
 import androidx.core.os.LocaleListCompat;
 
+import com.app.whatsappreal.R;
+
 import java.util.LinkedHashSet;
 import java.util.Locale;
 
 public class LangUtils {
     public static final String LANG_AUTO = "auto";
     public static final String LANG_DEFAULT = "en";
-
     private static ArrayMap<String, Locale> sLocaleMap;
 
     public static void setAppLanguages(@NonNull Context context) {
         if (sLocaleMap == null) sLocaleMap = new ArrayMap<>();
         Resources res = context.getResources();
         Configuration conf = res.getConfiguration();
-        // Assume that there is an array called language_key which contains all the supported language tags
         String[] locales = context.getResources().getStringArray(R.array.languages_key);
         Locale appDefaultLocale = Locale.forLanguageTag(LANG_DEFAULT);
-
         for (String locale : locales) {
             conf.setLocale(Locale.forLanguageTag(locale));
             Context ctx = context.createConfigurationContext(conf);
             String langTag = ctx.getString(R.string._lang_tag);
-
             if (LANG_AUTO.equals(locale)) {
                 sLocaleMap.put(LANG_AUTO, null);
             } else if (LANG_DEFAULT.equals(langTag)) {
@@ -59,19 +58,16 @@ public class LangUtils {
                 return locale;
             }
         }
-        // Fall-back to shared preferences
         String language = "";// TODO: Fetch current language from the shared preferences
         Locale locale = getAppLanguages(context).get(language);
         if (locale != null) {
             return locale;
         }
-        // Load from system configuration
         Configuration conf = Resources.getSystem().getConfiguration();
-        //noinspection deprecation
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.N ? conf.getLocales().get(0) : conf.locale;
     }
 
-    private static Locale applyLocale(Context context) {
+    static Locale applyLocale(Context context) {
         return applyLocale(context, LangUtils.getFromPreference(context));
     }
 
@@ -83,32 +79,24 @@ public class LangUtils {
 
     private static void updateResources(@NonNull Context context, @NonNull Locale locale) {
         Locale.setDefault(locale);
-
         Resources res = context.getResources();
         Configuration conf = res.getConfiguration();
-        //noinspection deprecation
         Locale current = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N ? conf.getLocales().get(0) : conf.locale;
-
         if (current == locale) {
             return;
         }
-
         conf = new Configuration(conf);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             setLocaleApi24(conf, locale);
         } else {
             conf.setLocale(locale);
         }
-        //noinspection deprecation
         res.updateConfiguration(conf, res.getDisplayMetrics());
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private static void setLocaleApi24(@NonNull Configuration config, @NonNull Locale locale) {
         LocaleList defaultLocales = LocaleList.getDefault();
         LinkedHashSet<Locale> locales = new LinkedHashSet<>(defaultLocales.size() + 1);
-        // Bring the target locale to the front of the list
-        // There's a hidden API, but it's not currently used here.
         locales.add(locale);
         for (int i = 0; i < defaultLocales.size(); ++i) {
             locales.add(defaultLocales.get(i));
